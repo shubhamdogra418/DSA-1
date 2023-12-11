@@ -1,4 +1,5 @@
 class moretha25 {
+//O(n2)
     public static int morethan (int arr[]) {
         int n=arr.length;
         for(int i=0;i<arr.length;i++) {
@@ -12,7 +13,7 @@ class moretha25 {
             }
         } return -1;
     }
-
+//O(n)
     public static int anotherOp (int arr[]) {
         int n=arr.length;
         int count=1;
