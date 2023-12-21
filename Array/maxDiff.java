@@ -23,9 +23,23 @@ public class maxDiff {
             }
         } return diff;
     }
+//121. Best Time to Buy and Sell Stock
+    static int buySell (int prices[]) { //O(n)
+        int min=prices[0];
+        int profit=0;
+        for(int i=1;i<prices.length;i++) {
+            if(prices[i] > min) {
+                profit=Math.max(profit, prices[i]-min);
+            } else {
+                min=prices[i];
+            }
+        } return profit;
+    }
     public static void main(String[] args) {
         int arr[]={1,5,2,10};
+        int prices[]={7,1,5,3,6,4};
         System.out.println(maximumDifference(arr));
         System.out.println(maxDiffOp(arr));
+        System.out.println(buySell(prices));
     }
 }
