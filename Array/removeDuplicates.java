@@ -15,14 +15,15 @@ public class removeDuplicates {
     }
 //single loop
 //https://www.youtube.com/watch?v=DEJAZBq0FDA
+//must aintaine pointer to insert next elements which will increment as new element inserts
     static void singleLoop (int arr[]) {
         int res=1;
         for(int i=1;i<arr.length;i++) {
-            if(arr[res-1]!=arr[i]) {
+            if(arr[i]!=arr[res-1]) {
                 arr[res]=arr[i];
-                res++;
+                 res++;
             }
-        } for(int i=0;i<arr.length;i++) {
+        } for (int i=0;i<arr.length;i++) {
             System.out.print(arr[i]+" ");
         }
     }
@@ -34,10 +35,24 @@ public class removeDuplicates {
             } 
         } System.out.print(arr[arr.length-1]);
     }
+
+//80. Remove Duplicates from Sorted Array II
+    static int remDup2 (int arr[]) {
+        int index=2;
+        for(int i=2;i<arr.length;i++) {
+            if(arr[i]!= arr[index-2]) {
+                arr[index]= arr[i];
+                index++;
+            }
+        } return index;
+    }
     public static void main(String[] args) {
-        int arr[]={10,10,10};
+        int arr[]={1,1,1,2,2,3};
         // remDup(arr);
         // singleLoop(arr);
-        remDupp(arr);
+        // remDupp(arr);
+        System.out.println(remDup2(arr));
+        remDup2(arr);
+        
     }
 }
