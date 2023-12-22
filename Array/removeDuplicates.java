@@ -46,6 +46,19 @@ public class removeDuplicates {
             }
         } return index;
     }
+
+//27. Remove Element
+    static int removeEl (int arr[], int val) {
+        int index=0;
+        for(int i=0;i<arr.length;i++) {
+            if(arr[i]!= arr[index]) {
+                arr[index] =arr[i];
+                index++;
+            }
+        } return index;
+    }
+
+
     public static void main(String[] args) {
         int arr[]={1,1,1,2,2,3};
         // remDup(arr);
@@ -53,6 +66,7 @@ public class removeDuplicates {
         // remDupp(arr);
         System.out.println(remDup2(arr));
         remDup2(arr);
+        System.out.println(removeEl(arr,2));
         
     }
 }
