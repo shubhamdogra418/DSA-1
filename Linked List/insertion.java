@@ -95,7 +95,29 @@ class insertion {
         return head;
     }
 
+//SEARCH using Iterative Way
+    static int search(Node head, int target) {
+        if(head == null) return -1;
+        Node curr= head;
+        int pos=1;
+        while( curr != null) {
+            if(curr.data == target) {
+                return pos;
+            } else{
+                pos++;
+                curr=curr.next;
+            }
+        } return -1;
+    }
 
+//SEARCH using Recurive way
+    static int recuriveSearch (Node head, int target) {
+        if(head==null) return -1; //base case
+        if(head.data == target) return 1; // base case
+        int res= recuriveSearch(head.next, target);
+        if(res==-1) return -1;
+        else return res+1;
+    }
 
 
     public static void main(String[] args) {
@@ -118,7 +140,9 @@ class insertion {
         // head= insertPos(head, 25, 3);
         // head= removeFirst(head);
         // head= removeLast(head);
-        head= removePos(head, 3);
-        traverse(head);
+        // head= removePos(head, 3);
+        // traverse(head);
+        System.out.println(search(head, 50));
+        System.out.println(recuriveSearch(head, 40));
     }
 }
